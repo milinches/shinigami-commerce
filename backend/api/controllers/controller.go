@@ -2,9 +2,10 @@ package controllers
 
 import "net/http"
 
-func GetProducts(http.ResponseWriter, *http.Request) {
+func GetProducts(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Get all Products"))
 }
 
-func GetProduct(http.ResponseWriter, *http.Request) {
-
+func GetProduct(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Get single Product"))
 }

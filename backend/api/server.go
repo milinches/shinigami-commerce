@@ -2,12 +2,14 @@ package api
 
 import (
 	"context"
-	"time"
 	"log"
+	"net/http"
+	"time"
 
+	"github.com/milinches/edsu-token-backend/api/router"
 	"go.mongodb.org/mongo-driver/mongo"
-    "go.mongodb.org/mongo-driver/mongo/options"
-    "go.mongodb.org/mongo-driver/mongo/readpref"
+	"go.mongodb.org/mongo-driver/mongo/options"
+	"go.mongodb.org/mongo-driver/mongo/readpref"
 )
 
 func Run() {
@@ -26,6 +28,12 @@ func Run() {
 
 	if err = client.Ping(ctx, readpref.Primary()); err != nil {
 		log.Fatalf("ping error: %v", err)
+	}
+
+	r := router.NEW()
+
+	if err := http.ListenAndServe(":8000", r); err != nil {
+		log.Fatal(err)
 	}
 
 }
