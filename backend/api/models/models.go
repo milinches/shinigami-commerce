@@ -13,18 +13,18 @@ type (
 
 	Items struct {
 		ID          primitive.ObjectID `bson:"id"`
-		Name        string             `json:"item_name"`
-		Price       float64            `json:"price"`
-		Discount    float64            `json:"discount"`
-		Description string             `json:"description"`
-		Tag         []string           `json:"tag"`
-		Image       string             `json:"image"`
+		Name        string             `bson:"item_name"`
+		Price       float64            `bson:"price"`
+		Discount    float64            `bson:"discount"`
+		Description string             `bson:"description"`
+		Tags        []string           `bson:"tag"`
+		Image       string             `bson:"image"`
 	}
 
 	Delivery struct {
 		ID        primitive.ObjectID `bson:"id"`
-		FirstName string             `json:"first_name"`
-		LastName  string             `json:"last_name"`
-		Address   string             `json:"address"`
+		FirstName string             `bson:"first_name"`
+		LastName  string             `bson:"last_name"`
+		Address   string             `bson:"address"`
 	}
 )
