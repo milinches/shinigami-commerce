@@ -1,3 +1,3 @@
-## Final year project
+## E-commerce project
 
-Create a token
+Golang and MongoDB
